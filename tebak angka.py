@@ -1,11 +1,11 @@
 import random
 
-# Inisialisasi variabel
+# variabel
 secret_number = random.randint(1, 100)
 ronde = 0
 max_ronde = 9
 
-# Header game
+# Header
 print("=" * 30)
 print("       TEBAK ANGKA")
 print("=" * 30)
@@ -19,34 +19,34 @@ while ronde < max_ronde:
         print(f"\nKesempatan ke-{ronde + 1} dari {max_ronde}")
         tebakan = int(input("Masukkan tebakan Anda (1-100): "))
         
-        # Validasi input
+        # validasi input
         if tebakan < 1 or tebakan > 100:
-            print("⚠️  Tolong masukkan angka antara 1-100!")
+            print(" Tolong masukkan angka antara 1-100!")
             continue
             
         ronde += 1
         
-        # Cek tebakan
+        # System Cek Tebakan
         if tebakan < secret_number:
-            print("📉 Tebakan Anda terlalu KECIL!")
+            print(" Tebakan Anda terlalu KECIL!")
             print(f"   Sisa kesempatan: {max_ronde - ronde}")
         elif tebakan > secret_number:
-            print("📈 Tebakan Anda terlalu BESAR!")
+            print(" Tebakan Anda terlalu BESAR!")
             print(f"   Sisa kesempatan: {max_ronde - ronde}")
         else:
-            print("🎉 SELAMAT! Anda berhasil menebak angka yang benar!")
-            print(f"✅ Angka yang benar adalah: {secret_number}")
-            print(f"🏆 Anda menebak dengan benar dalam {ronde} kali percobaan!")
+            print(" SELAMAT! Anda berhasil menebak angka yang benar!")
+            print(f" Angka yang benar adalah: {secret_number}")
+            print(f" Anda menebak dengan benar dalam {ronde} kali percobaan!")
             break
             
     except ValueError:
-        print("❌ Input tidak valid! Masukkan angka saja.")
+        print(" Input tidak valid! Masukkan angka saja.")
         continue
 
-# Jika gagal menebak
+# System Gagal Menembak
 else:
     print("\n" + "=" * 30)
-    print("💀 GAME OVER!")
-    print(f"🎯 Angka yang benar adalah: {secret_number}")
+    print(" GAME OVER!")
+    print(f"Angka yang benar adalah: {secret_number}")
     print("   Coba lagi lain kali!")
     print("=" * 30)
